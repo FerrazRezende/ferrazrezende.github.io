@@ -5,3 +5,28 @@ header {
 body {
     background-color: hsl(141, 53%, 53%);
 }
+
+.api-bg {
+    background-color: hsl(348, 100%, 61%);
+    height: 100%;
+}
+
+#api-title {
+    font-size: 60px;
+    padding-top: 1%;
+    color: aliceblue;
+}
+
+#nasa-btn {
+    width: 20%;
+    border: solid 1px white;
+    align-items: center;
+}
+
+#img-nasa {
+    margin-top: 2%;
+    margin-bottom: 2%;
+    width: 50%;
+    border: solid 5px white;
+    border-radius: 5%;
+}
