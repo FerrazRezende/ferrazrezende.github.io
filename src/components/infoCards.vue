@@ -43,7 +43,7 @@ export default {
                 </div>
                 <div id="card-2" class="cards-container" v-motion-slide-visible-top>
                     <p>O campo da arte e do entretenimento exerce um papel crucial em minha vida. Através de atividades como
-                        a produção de música eletrônica, a apreciação de animes envolventes e as emocionantes partidas de
+                        a produção de música eletrônica, a apreciação de animes e as partidas de
                         Valorant, encontro formas de expressar e recarregar minha energia criativa.
                     </p>
                     <p>
