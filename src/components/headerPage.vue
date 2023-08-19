@@ -30,7 +30,7 @@ export default {
                     <li><a href="#sobre">Sobre</a></li>
                     <li><a href="#projetos">Projetos</a></li>
                     <li><a href="#api">APIs</a></li>
-                    <li id="curriculo"><a href="https://drive.google.com/file/d/11KE05wW0Pv45QMXaCmYcP7M77b0fNt2-/view?usp=sharing" target="_blank">Curriculo</a></li>
+                    <li id="curriculo"><a href="https://drive.google.com/file/d/1i-HEyPeXcYfXUBHFL9kin8SnHXUBaj4r/view?usp=sharing" target="_blank">Curriculo</a></li>
                 </ul>
             </div>
             </nav>
