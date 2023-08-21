@@ -108,6 +108,7 @@ p {
     flex-direction: column;
     height: 450px;
     margin-left: 10%;
+    margin-bottom: 20%; 
     width: 100%;
     z-index: 10;
 }
