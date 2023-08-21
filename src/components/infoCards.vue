@@ -94,6 +94,7 @@ p {
     background-color: var(--verde-escuro);
     height: auto;
     width: 100%;
+    margin-bottom: 20%;
 }
 
 #card-2 p {
