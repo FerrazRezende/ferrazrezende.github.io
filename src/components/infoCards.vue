@@ -130,8 +130,12 @@ p {
     margin-top: -20%;
 }
 
+.linha-container {
+    padding: 10% 0 10% 0;
+}
+
 #linha-final {
-    padding: 20% 0 20% 0;
+    margin: 20% 0 20% 0;
 }
 
 #linha-vertical {
@@ -156,7 +160,9 @@ p {
     width: 97.4%;
 }
 
-
+.linha-container {
+    padding: 10% 0 10% 0;
+}
 
 @media (min-width: 950px) {
 
