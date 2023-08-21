@@ -131,7 +131,7 @@ p {
 }
 
 #linha-final {
-    margin: 20% 0 20% 0;
+    padding: 20% 0 20% 0;
 }
 
 #linha-vertical {
