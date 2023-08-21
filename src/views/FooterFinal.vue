@@ -14,7 +14,7 @@ export default {
             <div id="barra-vertical">
             </div>
             <div id="documentacoes">
-                <a class="footer-buttons" href="https://igorhalfeld.teachable.com/p/treinamento-completo-e-gratuito-de-vue-js-3-do-iniciante-ao-avancado?utm_source=landing_page" target="_blank"><img src="../../public/img/icons/footer/vuejs.svg">Melhor curso de Vue JS que existe</a>
+                <a class="footer-buttons" href="https://igorhalfeld.teachable.com/p/treinamento-completo-e-gratuito-de-vue-js-3-do-iniciante-ao-avancado?utm_source=landing_page" target="_blank"><img src="../../public/img/icons/footer/vuejs.svg">Melhor curso de Vue JS</a>
                 <a class="footer-buttons" href="https://api.nasa.gov/" target="_blank"><img src="../../public/img/icons/footer/nasa.svg">API NASA</a>
                 <a class="footer-buttons" href="https://rickandmortyapi.com/" target="_blank"><img src="../../public/img/icons/footer/rickandmorty.svg">Rick e Morty API</a>
             </div>
