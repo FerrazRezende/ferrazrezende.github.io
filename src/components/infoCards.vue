@@ -9,12 +9,17 @@ export default {
         }
     },
     async mounted () {
-        try {
-            var resposta = await idadeDoMiguel.get("");
-            this.idadeDoMiguel = resposta.data.diferenca_tempo.split(",")[0]
-        } catch(e) {
-            console.log(e);
+        let resposta = null
+
+        while (!resposta) {
+            try {
+                resposta = await idadeDoMiguel.get("");
+                this.idadeDoMiguel = resposta.data.diferenca_tempo.split(",")[0]
+            } catch(e) {
+                console.log(e);
+            }
         }
+
     }
 }
 
