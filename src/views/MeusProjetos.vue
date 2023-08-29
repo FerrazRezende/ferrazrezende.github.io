@@ -101,6 +101,7 @@ h1 {
     color: var(--branco);
     font-size: 1.5rem ;
     text-align: center;
+    z-index: 10;
 }
 
 h2 {

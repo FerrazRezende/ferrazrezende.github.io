@@ -14,7 +14,7 @@ export default {
         while (!resposta) {
             try {
                 resposta = await idadeDoMiguel.get("");
-                this.idadeDoMiguel = resposta.data.diferenca_tempo.split(",")[0]
+                this.idadeDoMiguel = resposta.data.idade.split(",")[2]
             } catch(e) {
                 console.log(e);
             }
@@ -44,7 +44,7 @@ export default {
                         grandiosos ou auxiliar um grande número de pessoas por meio da tecnologia.</p>
                     <p>Natural da cidade de <b>São Paulo</b>, carrego em mim a essência dinâmica e diversificada desse ambiente, o
                         que intensifica minha criatividade e ambição. Além disso, desfruto da gratificante experiência de
-                        ser pai de uma <a id="idade" href="https://api-do-miguel.onrender.com/index" target="_blank">criança de {{ idadeDoMiguel }}</a>.</p>
+                        ser pai de uma <a id="idade" href="https://api-do-miguel.onrender.com/index" target="_blank">criança de {{ idadeDoMiguel }} mês</a>.</p>
                 </div>
                 <div id="card-2" class="cards-container" v-motion-slide-visible-top>
                     <p>O campo da arte e do entretenimento exerce um papel crucial em minha vida. Através de atividades como
