@@ -27,7 +27,6 @@ export default {
 
 <template>
     <div class="container">
-        <img class="img-bg" src="../../public/img/bg-dktp.svg">
         <article>
             <section id="card-container">
                 <div id="card-1" class="cards-container" v-motion-slide-visible-top>
@@ -44,7 +43,7 @@ export default {
                         grandiosos ou auxiliar um grande número de pessoas por meio da tecnologia.</p>
                     <p>Natural da cidade de <b>São Paulo</b>, carrego em mim a essência dinâmica e diversificada desse ambiente, o
                         que intensifica minha criatividade e ambição. Além disso, desfruto da gratificante experiência de
-                        ser pai de uma <a id="idade" href="https://api-do-miguel.onrender.com/index" target="_blank">criança de {{ idadeDoMiguel }} mês</a>.</p>
+                        ser pai de uma <a id="idade" href="https://api-do-miguel.onrender.com/index" target="_blank">criança de 1 mês</a>.</p>
                 </div>
                 <div id="card-2" class="cards-container" v-motion-slide-visible-top>
                     <p>O campo da arte e do entretenimento exerce um papel crucial em minha vida. Através de atividades como
@@ -71,7 +70,7 @@ export default {
 @import '@/style/global.css';
 
 article {
-    margin-top: 170%;
+    margin-top: 150%;
     width: 75%;
 }
 
@@ -99,7 +98,6 @@ p {
     background-color: var(--verde-escuro);
     height: auto;
     width: 100%;
-    margin-bottom: 20%;
 }
 
 #card-2 p {
@@ -113,7 +111,7 @@ p {
     flex-direction: column;
     height: 450px;
     margin-left: 10%;
-    margin-bottom: 20%; 
+    margin-bottom: 0; 
     width: 100%;
     z-index: 10;
 }
@@ -140,7 +138,7 @@ p {
 }
 
 #linha-final {
-    margin: 20% 0 20% 0;
+    margin: 20% 0 5% 0;
 }
 
 #linha-vertical {

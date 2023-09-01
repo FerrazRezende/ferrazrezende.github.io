@@ -46,7 +46,6 @@ export default {
 
 <template>
 
-<img class="img-bg" src="../../public/img/bg-dktp.svg">
     <div id="projetos">
         <h1>Projetos</h1>
         <swiper 

@@ -46,8 +46,8 @@ export default {
 
     <headerPage />
     <SobreMim />
-    <infoCards />
-    <MeusProjetos />
+    <infoCards class="bg-1"/>
+    <MeusProjetos class="bg-reverse" />
     <ConsumindoApis />
     <FooterFinal />
 
@@ -59,6 +59,21 @@ export default {
 <style>
 @import "@/style/global.css";
 @import 'animate.css';
+
+.bg-1 {
+  background-image: url(../public/img/bg-dktp.svg);
+  background-size: 100%;
+  background-repeat: no-repeat;
+  width: 100%;
+}
+
+.bg-reverse {
+  background-image: url(../public/img/image.png);
+  background-size: 100%;
+  background-repeat: no-repeat;
+  width: 100%;
+
+}
 
 #curriculo-button {
   animation-delay: 1s;
