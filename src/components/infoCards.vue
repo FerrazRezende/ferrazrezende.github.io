@@ -164,14 +164,18 @@ p {
 }
 
 .linha-container {
-    padding: 10% 0 10% 0;
+    padding: 20% 0 10% 0;
 }
 
 @media (min-width: 950px) {
 
+    article {
+        margin-top: 130%
+    }
+
     #card-1 {
         height: 80px;
-        margin-top: -170%;
+        margin-top: -140%;
         width: 150px;
     }
 
@@ -191,19 +195,12 @@ p {
     }
 
     #linha-final {
-        margin-bottom: 40%;
-        margin-top: -20%;
+        margin-bottom: 35%;
+        margin-top: -55%;
     }
 
     .cards-container {
         margin-right: 12%;
-    }
-
-    .img-bg {
-        height: 100%;
-        left: 11px;
-        margin-top: -80%;
-        width: 100%;
     }
 }
 
@@ -234,7 +231,7 @@ p {
 
     #card-container {
         margin-left: 10%;
-        margin-top: -45%;
+        margin-top: 0%;
         z-index: 10;
     }
 

@@ -141,6 +141,12 @@ export default {
 
 @media (min-width: 950px) {
 
+  .bg-1 {
+    border: 1px solid transparent;
+    background-position: 0% 67%;
+    
+  }
+
   #curriculo-button {
     bottom: 190px;
     left: -11px;

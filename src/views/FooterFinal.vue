@@ -88,7 +88,7 @@ section {
 
 @media (min-width: 1490px) {
     #footer {
-        width: 100.1%;
+        width: 102.5%;
     }
 }
 
