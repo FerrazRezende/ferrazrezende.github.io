@@ -13,7 +13,7 @@ export default {
             exploração contínua do mundo da tecnologia. Aqui, trago minha jornada de aprendizado e interesse, destacando
             como o fascínio pelo universo digital me moldou.
         </p>
-        <a  href="https://drive.google.com/file/d/1jrXf2twJ_KA1BlBd-QsvH7EW411DpkNb/view?usp=sharing" target="_blank"><button>Saiba mais!</button></a>
+        <a  href="https://drive.google.com/file/d/1FusTMfaIOmmF1hozXTPBh3yNz94NslNy/view?usp=sharing" target="_blank"><button>Saiba mais!</button></a>
     </div>
 </template>
 

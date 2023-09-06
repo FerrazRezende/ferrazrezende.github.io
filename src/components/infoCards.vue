@@ -163,9 +163,6 @@ p {
     width: 97.4%;
 }
 
-.linha-container {
-    padding: 20% 0 10% 0;
-}
 
 @media (min-width: 950px) {
 
@@ -188,15 +185,15 @@ p {
     }
 
     #card-container {
-        margin-bottom: 150px;
+        margin-bottom: 0px;
         margin-left: 5%;
         padding-left: 25%;
         z-index: 10;
     }
 
     #linha-final {
-        margin-bottom: 35%;
-        margin-top: -55%;
+        margin-bottom: 50%;
+        margin-top: -10%;
     }
 
     .cards-container {

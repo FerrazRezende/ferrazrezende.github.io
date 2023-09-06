@@ -40,7 +40,7 @@ export default {
       </a>
       <a id="soundcloud-button" href="https://linktr.ee/cognizantrance" class="animate__animated animate__zoomInUp" >
       </a>
-      <a id="curriculo-button" href="https://drive.google.com/file/d/1jrXf2twJ_KA1BlBd-QsvH7EW411DpkNb/view?usp=sharing" class="animate__animated animate__zoomInUp">
+      <a id="curriculo-button" href="https://drive.google.com/file/d/1FusTMfaIOmmF1hozXTPBh3yNz94NslNy/view?usp=sharing" class="animate__animated animate__zoomInUp" target="_blank">
       </a>
   </div>
 

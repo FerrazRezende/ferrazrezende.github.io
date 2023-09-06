@@ -70,7 +70,7 @@ a {
     cursor: pointer;
     font-size: 0.7rem;
     font-weight: bold;
-    margin-top: 15px;
+    margin-top: -10%;
     margin-bottom: 30%;
     padding: 2%;
     text-align: center;
@@ -103,7 +103,7 @@ img{
 #api-cont {
     display: flex;
     flex-direction: column;
-    height: 130px;  
+    max-height: 130px;  
     margin-top: 5%;
     width: 110px;
 }
@@ -111,7 +111,7 @@ img{
 #foto-cont {
     border: solid 5px var(--verde-claro);
     border-radius: 5px;
-    height: 420px;
+    max-height: 420px;
     margin-top: 5%;
     width: 160px;
 }
@@ -122,7 +122,7 @@ img{
     a {
         font-size: 1.5rem;
         margin-bottom: 50%;
-        margin-top: 10%;
+        margin-top: -10%;
         width: 420px;
     }
 
@@ -131,7 +131,7 @@ img{
     }
 
     #foto-cont {
-        height: 880px;
+        max-height: 880px;
         width: 415px;
     }
 }
@@ -160,7 +160,7 @@ img{
     }
 
     #api-cont {
-        height: 640px;  
+        max-height: 640px;  
         margin-top: 10%;
         width: 750px;
     }
@@ -168,7 +168,7 @@ img{
     #foto-cont {
         border: solid 10px var(--verde-claro);
         border-radius: 15px;
-        height: 512px;
+        max-height: 512px;
         margin-top: 0%;
         width: 600px;
     }
