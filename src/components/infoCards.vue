@@ -1,27 +1,36 @@
 <script>
-import idadeDoMiguel from "@/services/idadeDoMiguel"
+import idadeDoMiguel from "@/services/idadeDoMiguel";
+import { Skeleton } from 'vue-loading-skeleton';
+import "vue-loading-skeleton/dist/style.css";
 
 export default {
     name: 'InfoCards',
-    data () {
+    components: {
+        Skeleton,
+    },
+    data() {
         return {
-            idadeDoMiguel: ""
+            idadeDoMiguel: {
+                meses: "",
+                semanas: "",
+            },
+            idadeCarregada: false,
         }
     },
-    async mounted () {
-        let resposta = null
-
-        while (!resposta) {
-            try {
-                resposta = await idadeDoMiguel.get("");
-                this.idadeDoMiguel = resposta.data.idade.split(",")[2]
-            } catch(e) {
-                console.log(e);
-            }
+    methods: {
+        pegarIdade: async function() {
+            var idade = await idadeDoMiguel.get();
+            this.idadeDoMiguel.meses = idade.data.meses;
+            this.idadeDoMiguel.semanas = idade.data.semanas;
+            this.idadeCarregada = true;
         }
+    },
+    mounted: function() {
+       this.pegarIdade();
 
-    }
+    },
 }
+
 
 </script>
 
@@ -29,7 +38,7 @@ export default {
     <div class="container">
         <article>
             <section id="card-container">
-                <div id="card-1" class="cards-container" v-motion-slide-visible-top>
+                <div id="card-1" class="cards-container">
                     <div>
                         <h3>22</h3>
                         <h3>SP</h3>
@@ -37,15 +46,15 @@ export default {
                     <div id="linha-vertical"></div>
                     <img id="foto" src="/img/Foto.png">
                 </div>
-                <div id="card-2" class="cards-container" v-motion-slide-visible-top>
+                <div id="card-2" class="cards-container">
                     <p>Eu sou o <b>Matheus</b>, um estudante de <b>Ciência da Computação</b> apaixonado por tecnologia. Minha busca
                         constante é pela acumulação de experiências, visando um futuro onde eu possa realizar feitos
                         grandiosos ou auxiliar um grande número de pessoas por meio da tecnologia.</p>
                     <p>Natural da cidade de <b>São Paulo</b>, carrego em mim a essência dinâmica e diversificada desse ambiente, o
                         que intensifica minha criatividade e ambição. Além disso, desfruto da gratificante experiência de
-                        ser pai de uma <a id="idade" href="https://api-do-miguel.onrender.com/index" target="_blank">criança de 1 mês</a>.</p>
+                        ser pai de uma <Skeleton loading="100%" width="40%" v-if="!idadeCarregada"/><a v-if="idadeCarregada" id="idade" href="https://api-do-miguel.onrender.com/index" target="_blank">criança de {{idadeDoMiguel.meses}} meses e {{ idadeDoMiguel.semanas }} semanas.</a></p>                
                 </div>
-                <div id="card-2" class="cards-container" v-motion-slide-visible-top>
+                <div id="card-2" class="cards-container">
                     <p>O campo da arte e do entretenimento exerce um papel crucial em minha vida. Através de atividades como
                         a produção de música eletrônica, a apreciação de animes e as partidas de
                         Valorant, encontro formas de expressar e recarregar minha energia criativa.
@@ -82,6 +91,7 @@ h3 {
 p {
     color: var(--branco);
 }
+
 
 #card-1 {
     align-items: center;
@@ -161,6 +171,10 @@ p {
     pointer-events: none;
     position: absolute;
     width: 97.4%;
+}
+
+#skeleton {
+    maring-left: 50%;
 }
 
 

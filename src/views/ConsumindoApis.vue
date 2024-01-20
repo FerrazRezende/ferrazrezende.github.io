@@ -1,5 +1,5 @@
 <script>
-import musicasAutorais from '@/components/musicasAutorais.vue';
+//import musicasAutorais from '@/components/musicasAutorais.vue';
 import apiNasa from '@/components/apiNasa.vue';
 import indexPageRn from '@/components/rickandmorty/indexPageRn.vue';
 
@@ -8,13 +8,13 @@ export default {
     components: {
         apiNasa,
         indexPageRn,
-        musicasAutorais,
+//        musicasAutorais,
     },
     data () {
         return {
             exibirNasa: true,
             exibirRN: false,
-            exibirMusica: false
+//            exibirMusica: false
         }
     },
     methods: {
@@ -24,9 +24,9 @@ export default {
             if (this.exibirRN === true) {
                 this.exibirRN = false
             }
-            if (this.exibirMusica === true) {
-                this.exibirMusica = false
-            }
+//            if (this.exibirMusica === true) {
+//                this.exibirMusica = false
+//            }
 
             this.exibirNasa = true
         },
@@ -37,25 +37,24 @@ export default {
                 this.exibirNasa = false
             }
 
-            if (this.exibirMusica === true) {
-                this.exibirMusica = false
-            }
+//            if (this.exibirMusica === true) {
+//                this.exibirMusica = false
+//            }
 
             this.exibirRN = true
         },
 
-        mostrarMusicas: function () {
+//        mostrarMusicas: function () {
 
-            if (this.exibirNasa === true) {
-                this.exibirNasa = false
-            } 
+//            if (this.exibirNasa === true) {
+//                this.exibirNasa = false
+//            } 
 
-            if (this.exibirRN === true) {
-                this.exibirRN = false
-            }
-
-            this.exibirMusica = true
-        }
+//            if (this.exibirRN === true) {
+//                this.exibirRN = false
+//            }
+//            this.exibirMusica = true
+//        }
     },
 }
 </script>
@@ -67,7 +66,7 @@ export default {
             <div class="buttons">
                 <a @click="mostrarNasa()">API da NASA</a>
                 <a id="rm" @click="mostrarRN()">Rick and Morty</a>
-                <p id="musicas" @click="mostrarMusicas()"></p>
+<!--               <p id="musicas" @click="mostrarMusicas()"></p> -->
             </div>
             <div id="sidebar"></div>
             <div id="panel">
@@ -77,9 +76,9 @@ export default {
                 <div v-if="exibirRN" id="rickandmorty">
                     <indexPageRn />
                 </div>
-                <div v-if="exibirMusica" id="musicas-autorais">
+                <!-- <div v-if="exibirMusica" id="musicas-autorais">
                     <musicasAutorais />
-                </div>
+                </div> -->
             </div>
         </div>
     </div>
