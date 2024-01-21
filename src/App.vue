@@ -140,7 +140,7 @@ export default {
 }
 
 .fixar-header {
-  top: 0;
+  top: 16px;
   z-index: 150;
   position: fixed;
   animation: bounceInDown 1s;

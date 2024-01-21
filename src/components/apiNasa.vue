@@ -160,6 +160,15 @@ img{
 
 @media (min-width: 950px) {
 
+    #fechar-texto {
+        font-size: 1rem;
+    }
+
+    #icon-i {
+        width: 32px;
+        height: 32px;
+    }
+
     #texto-descritivo {
         width: 328px;
         font-size: 1rem;

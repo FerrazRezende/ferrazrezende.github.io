@@ -166,7 +166,7 @@ h1 {
 }
 
 #rm {
-    font-size: 1rem;
+    font-size: .5rem;
 }
 
 #sidebar {
@@ -234,7 +234,7 @@ h1 {
     }
 
     #rm {
-        font-size: 0.8rem;
+        font-size: 1rem;
         margin-bottom: 150%;
         text-align: center;
     }

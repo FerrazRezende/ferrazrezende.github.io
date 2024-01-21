@@ -150,8 +150,8 @@ p {
 }
 
 #infocards {
-    margin-bottom: -15%;
-    margin-top: -20%;
+    margin-bottom: 5%;
+    margin-top: 0%;
 }
 
 .linha-container {
@@ -159,7 +159,7 @@ p {
 }
 
 #linha-final {
-    margin: 20% 0 5% 0;
+    margin: 10% 0 5% 0;
 }
 
 #linha-vertical {
@@ -217,8 +217,8 @@ p {
     }
 
     #linha-final {
-        margin-bottom: 50%;
-        margin-top: -10%;
+        margin-bottom: 20%;
+        margin-top: -35%;
     }
 
     .cards-container {

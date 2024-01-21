@@ -46,6 +46,7 @@ h1 {
     border-right: 2px solid var(--branco);
     font-size: 1.5rem;
     margin: 0 18% 16px 0;
+    width: 100%;
     overflow: hidden;
     white-space: nowrap;
 }
