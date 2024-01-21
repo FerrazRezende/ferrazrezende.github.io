@@ -19,33 +19,33 @@ export default {
   },
   data () {
     return {
-      exibirBotoes: false,
-      botoesVisiveis: true,
-      animarSaida: "",
+      //exibirBotoes: false,
+      //botoesVisiveis: true,
+      //animarSaida: "",
       fixarHeader: false,
       headerAberto: false,
       ultimoScroll: 0,
     }
   },
   methods: {
-    mostrarBotoes: function () {
-      this.exibirBotoes = !this.exibirBotoes
-    },
-    esconderBotoes: function () {
-      var scroll = window.scrollY;
-      if (scroll >= 500) {
-        this.animarSaida = "animate__animated animate__backOutDown"
-        setTimeout(() => {
-          this.botoesVisiveis = false
-        }, 1000);
-      }
-      if (scroll <= 499){
-        this.animarSaida = "animate__animated animate__backInUp"
-        setTimeout(() => {
-          this.botoesVisiveis = true
-        }, 500);
-      }
-    },
+    //mostrarBotoes: function () {
+      //this.exibirBotoes = !this.exibirBotoes
+    //},
+//    esconderBotoes: function () {
+//      var scroll = window.scrollY;
+      //if (scroll >= 500) {
+        //this.animarSaida = "animate__animated animate__backOutDown"
+        //setTimeout(() => {
+          //this.botoesVisiveis = false
+        //}, 1000);
+      //}
+      //if (scroll <= 499){
+        //this.animarSaida = "animate__animated animate__backInUp"
+        //setTimeout(() => {
+          //this.botoesVisiveis = true
+        //}, 500);
+      //}
+    //},
     headerFixar: function () {
       var scrollAtual = window.scrollY
       if (scrollAtual >= 200) {
@@ -70,7 +70,7 @@ export default {
     }
   },
   mounted () {
-    window.addEventListener('scroll', this.esconderBotoes);
+//window.addEventListener('scroll', this.esconderBotoes);
     window.addEventListener('scroll', this.headerFixar);
 
   }
@@ -80,6 +80,7 @@ export default {
 <template>
 
   <div>
+<!--
     <a v-if="botoesVisiveis" :class="animarSaida" id="menu-button" @click="mostrarBotoes">
     </a>
     <div v-if="exibirBotoes">
@@ -87,10 +88,10 @@ export default {
       </a>
       <a id="soundcloud-button" href="https://linktr.ee/cognizantrance" class="animate__animated animate__zoomInUp" >
       </a>
-<!--      <a id="curriculo-button" href="https://drive.google.com/file/d/1FusTMfaIOmmF1hozXTPBh3yNz94NslNy/view?usp=sharing" class="animate__animated animate__zoomInUp" target="_blank">
-      </a> -->
+     <a id="curriculo-button" href="https://drive.google.com/file/d/1FusTMfaIOmmF1hozXTPBh3yNz94NslNy/view?usp=sharing" class="animate__animated animate__zoomInUp" target="_blank">
+      </a> 
   </div>
-
+-->
     <headerPage @headerAtivado="pegarEstadoHeader" :class="{'fixar-header': fixarHeader}" />
     <SobreMim />
     <infoCards class="bg-1"/>
