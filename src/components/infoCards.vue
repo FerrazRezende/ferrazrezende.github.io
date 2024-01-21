@@ -15,6 +15,7 @@ export default {
                 semanas: "",
             },
             idadeCarregada: false,
+            estaVisivel: false,
         }
     },
     methods: {
@@ -23,11 +24,24 @@ export default {
             this.idadeDoMiguel.meses = idade.data.meses;
             this.idadeDoMiguel.semanas = idade.data.semanas;
             this.idadeCarregada = true;
+        },
+        checarVisibilidade: function () {
+            const elemento = this.$refs.elementoParaAnimar;
+            if (elemento) {
+                const rect = elemento.getBoundingClientRect();
+                this.estaVisivel = rect.top < window.innerHeight && rect.bottom >= 0;
+                if (this.estaVisivel) {
+                    elemento.classList.add('animate__animated')
+                    elemento.classList.add('animate__backInLeft')
+                    window.removeEventListener('scroll', this.checarVisibilidade);
+                }
+            }
         }
     },
     mounted: function() {
-       this.pegarIdade();
-
+        this.pegarIdade();
+        this.checarVisibilidade();
+        window.addEventListener('scroll', this.checarVisibilidade);
     },
 }
 
@@ -36,11 +50,11 @@ export default {
 
 <template>
     <div class="container">
-        <article>
+        <article ref="elementoParaAnimar">
             <section id="card-container">
                 <div id="card-1" class="cards-container">
                     <div>
-                        <h3>22</h3>
+                        <h3>23</h3>
                         <h3>SP</h3>
                     </div>
                     <div id="linha-vertical"></div>
@@ -55,14 +69,11 @@ export default {
                         ser pai de uma <Skeleton loading="100%" width="40%" v-if="!idadeCarregada"/><a v-if="idadeCarregada" id="idade" href="https://api-do-miguel.onrender.com/index" target="_blank">criança de {{idadeDoMiguel.meses}} meses e {{ idadeDoMiguel.semanas }} semanas.</a></p>                
                 </div>
                 <div id="card-2" class="cards-container">
-                    <p>O campo da arte e do entretenimento exerce um papel crucial em minha vida. Através de atividades como
-                        a produção de música eletrônica, a apreciação de animes e as partidas de
-                        Valorant, encontro formas de expressar e recarregar minha energia criativa.
+                    <p>
+                        Neste espaço, busco oferecer uma breve apresentação sobre minha experiência e compartilhar meu conhecimento na área.
                     </p>
                     <p>
-                        Neste espaço, tenho o propósito de realizar uma breve apresentação e compartilhar meu conhecimento
-                        na área. Agradeço pela oportunidade de me expressar e aguardo ansiosamente a chance de contribuir
-                        com meu know-how. Obrigado.
+                        Atualmente, atuo como estagiário no Banco do Brasil, no setor responsável pelo desenvolvimento de sistemas departamentais. Ao longo dessa experiência, participei diretamente na exploração, manutenção e desenvolvimento de ferramentas, utilizando linguagens como Python, JavaScript, Java e GoLang.
                     </p>
                 </div>
             </section>
@@ -181,12 +192,12 @@ p {
 @media (min-width: 950px) {
 
     article {
-        margin-top: 130%
+        margin-top: 80%;
     }
 
     #card-1 {
         height: 80px;
-        margin-top: -140%;
+        margin-top: -110%;
         width: 150px;
     }
 
@@ -217,6 +228,10 @@ p {
 
 
 @media (min-width: 1490px) {
+    
+    .container {
+        margin-top: -10%;
+    }
 
     h3 {
         font-size: 2.5rem;
@@ -227,6 +242,7 @@ p {
         border-radius: 20px;
         height: 120px;
         width: 220px;
+        margin-top: -60%;
     }
 
     #card-2 {

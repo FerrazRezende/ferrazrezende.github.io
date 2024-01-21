@@ -104,7 +104,7 @@ export default {
             <p id="erro" class="animate__animated animate__shakeX"></p>
         </header>
     </div>
-    <div v-if="ativarModalMundo" class="episodiosCont animate__animated animate__zoomIn" >
+    <div v-if="ativarModalMundo" class="episodiosCont" >
         <episodiosModal :persoId="persoId" :nomeDoPersonagem="nomeDoPersonagem" :fecharModalMundo="fecharModalMundo"/>
     </div>
     <div id="personagemContainer" v-for="item in itensFiltrados" :key="item.id">
@@ -161,6 +161,7 @@ p {
     top: 50;
     width: 210px;
     z-index: 100;
+    animation: zoomIn .5s;
 }
 
 #nome {

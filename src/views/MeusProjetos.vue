@@ -212,7 +212,7 @@ section {
     }
 
     #botao {
-        margin-top: 15%;
+        margin-top: 5%;
     }
 
     #projetos {
@@ -221,13 +221,13 @@ section {
     }
 
     #stacks {
-        margin-top: 20%;
+        margin-top: 10%;
     }
 
     .projetos {
         background-color: var(--verde-escuro);
         border-radius: 25px;
-        height: 616px;
+        height: 512px;
         width: 216px;
     }
 

@@ -29,6 +29,10 @@ a:hover {
     opacity: 0.85;
 }
 
+body {
+    overflow-x: hidden;
+}
+
 html, body {
     background-color: var(--bege-bg);
 }

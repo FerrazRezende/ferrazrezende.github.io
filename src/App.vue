@@ -20,12 +20,59 @@ export default {
   data () {
     return {
       exibirBotoes: false,
+      botoesVisiveis: true,
+      animarSaida: "",
+      fixarHeader: false,
+      headerAberto: false,
+      ultimoScroll: 0,
     }
   },
   methods: {
     mostrarBotoes: function () {
       this.exibirBotoes = !this.exibirBotoes
+    },
+    esconderBotoes: function () {
+      var scroll = window.scrollY;
+      if (scroll >= 500) {
+        this.animarSaida = "animate__animated animate__backOutDown"
+        setTimeout(() => {
+          this.botoesVisiveis = false
+        }, 1000);
+      }
+      if (scroll <= 499){
+        this.animarSaida = "animate__animated animate__backInUp"
+        setTimeout(() => {
+          this.botoesVisiveis = true
+        }, 500);
+      }
+    },
+    headerFixar: function () {
+      var scrollAtual = window.scrollY
+      if (scrollAtual >= 200) {
+        this.fixarHeader = true
+      }
+      if (scrollAtual < this.ultimoScroll) {
+        this.fixarHeader = false
+      }
+      this.ultimoScroll = scrollAtual
+    },
+    pegarEstadoHeader: function () {
+      this.headerAberto = !this.headerAberto
     }
+  },
+  watch: {
+    headerAberto(header) {
+      if (header) {
+        document.body.classList.add('bloquear-overflow');
+      } else {
+        document.body.classList.remove('bloquear-overflow');
+      }
+    }
+  },
+  mounted () {
+    window.addEventListener('scroll', this.esconderBotoes);
+    window.addEventListener('scroll', this.headerFixar);
+
   }
 }
 </script>
@@ -33,7 +80,7 @@ export default {
 <template>
 
   <div>
-    <a id="menu-button" @click="mostrarBotoes">
+    <a v-if="botoesVisiveis" :class="animarSaida" id="menu-button" @click="mostrarBotoes">
     </a>
     <div v-if="exibirBotoes">
       <a id="github-button" href="https://github.com/FerrazRezende" target="_blank" class="animate__animated animate__zoomInUp">
@@ -44,7 +91,7 @@ export default {
       </a> -->
   </div>
 
-    <headerPage />
+    <headerPage @headerAtivado="pegarEstadoHeader" :class="{'fixar-header': fixarHeader}" />
     <SobreMim />
     <infoCards class="bg-1"/>
     <MeusProjetos class="bg-reverse" />
@@ -89,6 +136,13 @@ export default {
   position: fixed;
   width: 45px;
   z-index: 10;
+}
+
+.fixar-header {
+  top: 0;
+  z-index: 150;
+  position: fixed;
+  animation: bounceInDown 1s;
 }
 
 
@@ -139,11 +193,15 @@ export default {
   z-index: 10;
 }
 
+.bloquear-overflow {
+  overflow: hidden;
+}
+
 @media (min-width: 950px) {
 
   .bg-1 {
     border: 1px solid transparent;
-    background-position: 0% 67%;
+    background-position: 100% 40%;
     
   }
 

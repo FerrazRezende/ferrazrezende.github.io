@@ -10,6 +10,7 @@ export default {
     methods: {
         abrirMenu: function () {
             this.ativarMenu = !this.ativarMenu
+            this.$emit('headerAtivado', this.ativarMenu)
         }
     }
 }
@@ -30,7 +31,7 @@ export default {
                     <li><a href="#sobre">Sobre</a></li>
                     <li><a href="#projetos">Projetos</a></li>
                     <li><a href="#api">APIs</a></li>
-                    <li id="curriculo"><a target="_blank">Curriculo</a></li>
+                    <li id="curriculo"><a>Curriculo</a></li>
                 </ul>
             </div>
             </nav>
@@ -131,6 +132,7 @@ ul li {
         height: auto;
         position: static;
         width: auto;
+        background-color: transparent;
     }
 
     ul {

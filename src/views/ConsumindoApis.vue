@@ -166,7 +166,7 @@ h1 {
 }
 
 #rm {
-    font-size: 8px;
+    font-size: 1rem;
 }
 
 #sidebar {
@@ -181,7 +181,7 @@ h1 {
     display: flex;
     flex-direction: column;
     margin-left: -15%;
-    margin-top: -15%;
+    margin-top: -50%;
 
 }
 
@@ -209,21 +209,21 @@ h1 {
 
     #display {
         border-radius: 15px;
-        height: 822px;
-        width: 994px;
+        height: 605px;
+        width: 822px;
     }
 
     #panel {
         border-radius: 15px;
-        height: 730px;
+        height: 512px;
         margin-left: 14%;
-        width: 640px;
+        width: 520px;
     }
 
 
     #sidebar {
-        margin-left: 5%;
-        margin-right: -7%;
+        margin-left: 1%;
+        margin-right: -5%;
 
     }
 
@@ -240,7 +240,7 @@ h1 {
     }
 
     .buttons {
-        margin-top: -20%;
+        margin-top: -29%;
     }
 
     .buttons a {
@@ -263,16 +263,16 @@ h1 {
     
     #display {
         border-radius: 25px;
-        height: 1205px;
-        width: 1445px;
+        height: 840px;
+        width: 1100px;
     }
 
 
     #panel {
         border-radius: 25px;
-        height: 1145px;
+        height: 745px;
         margin: 0%;
-        width: 942px;
+        width: 656px;
     }
 
     #sidebar {
@@ -286,9 +286,9 @@ h1 {
 
     .buttons a {
         border-radius: 16px;
-        font-size: 2rem;
+        font-size: 1.5rem;
         height: 52px;
-        width: 329px;
+        width: 225px;
     }
 
     #musicas {
@@ -299,7 +299,8 @@ h1 {
     }
 
     #rm {
-        font-size: 2rem;
+        font-size: 1.5rem;
+        text-align: center;
     }
 
 }
