@@ -2,45 +2,76 @@ import { createApp } from 'vue'
 import App from './App.vue'
 import router from './route/routes'
 
-import { OhVueIcon, addIcons} from "oh-vue-icons"
+import ElementPlus from 'element-plus'
+import 'element-plus/dist/index.css'
+
+import './style/reset.sass'
+import './style/global.sass'
+
+import { OhVueIcon, addIcons } from "oh-vue-icons"
 import {
     CoDiscord,
     CoGithub,
     BiMoonStarsFill,
     BiSunFill,
+    RiComputerLine,
+    BiTerminal,
+    BiGlobe,
+    CoVueJs,
+    FaUserAstronaut,
+    FaFlask,
+    MdCatchingpokemon,
+    SiFastapi,
+    CoDjango,
+    FaPhp,
+    LaHtml5,
+    LaCss3Alt,
+    CoJs,
+    FaNodeJs,
+    CoJquery,
+    CoPostgresql,
+    CoAmazonAws,
+    CoPython,
+    IoDocumentText,
+    PrAngleDown
+
 } from "oh-vue-icons/icons"
-
-import './style/reset.sass'
-import './style/global.sass'
-
+import { createPinia } from "pinia"
 
 addIcons(
     CoDiscord,
     CoGithub,
     BiMoonStarsFill,
     BiSunFill,
+    RiComputerLine,
+    BiTerminal,
+    BiGlobe,
+    CoVueJs,
+    FaUserAstronaut,
+    FaFlask,
+    MdCatchingpokemon,
+    SiFastapi,
+    CoDjango,
+    FaPhp,
+    LaHtml5,
+    LaCss3Alt,
+    CoJs,
+    FaNodeJs,
+    CoJquery,
+    CoPostgresql,
+    CoAmazonAws,
+    CoPython,
+    IoDocumentText,
+    PrAngleDown
+
 )
 
 const app = createApp(App)
 
-
-applyTheme()
-
-window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', applyTheme)
-
+const pinia = createPinia()
+app.use(pinia)
+app.use(ElementPlus)
 app.use(router)
 app.component("v-icon", OhVueIcon)
+
 app.mount("#app")
-
-function applyTheme() {
-    const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches
-
-    if (prefersDark) {
-        document.body.classList.add('dark-theme')
-        document.body.classList.remove('light-theme')
-    } else {
-        document.body.classList.add('light-theme')
-        document.body.classList.remove('dark-theme')
-    }
-}
-

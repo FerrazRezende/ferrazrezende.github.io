@@ -1,26 +1,15 @@
 <script lang="ts">
-import {defineComponent, onMounted, ref} from "vue"
+import {computed, defineComponent, onMounted} from "vue"
 import { useRoute, useRouter } from "vue-router"
+import {useThemeStore} from "@/stores/themeStore"
 
 export default defineComponent({
   name: "HeaderComponent",
   setup () {
-    const isDark = ref(false)
-    const iconTheme = ref("")
+    const themeStore = useThemeStore()
     const router = useRouter()
     const route = useRoute()
 
-    const checkTheme = () => {
-      isDark.value = window.matchMedia('(prefers-color-scheme: dark)').matches
-      iconTheme.value = isDark.value ? "bi-sun-fill" : "bi-moon-stars-fill"
-    }
-
-    const toggleTheme = () => {
-      isDark.value = !isDark.value
-      iconTheme.value = isDark.value ? "bi-sun-fill" : "bi-moon-stars-fill"
-      document.body.classList.toggle('dark-theme', isDark.value)
-      document.body.classList.toggle('light-theme', !isDark.value);
-    };
 
     const goToProject = () => {
       router.push({ name: "ProjectPage" })
@@ -34,20 +23,19 @@ export default defineComponent({
       return route.name === routeName;
     };
 
+    const iconTheme = computed(() => {
+      return themeStore.isDark ? "bi-sun-fill" : "bi-moon-stars-fill";
+    });
+
     onMounted(() => {
-      checkTheme()
+      themeStore.checkTheme()
+      window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', themeStore.checkTheme)
+
     })
 
-
-
-
-    window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', checkTheme)
-
     return {
-      isDark,
+      themeStore,
       iconTheme,
-      checkTheme,
-      toggleTheme,
       goToProject,
       goToHomePage,
       isActive,
@@ -60,8 +48,8 @@ export default defineComponent({
 <template>
   <header>
     <div class="right-icons">
-      <v-icon name="co-discord" scale="2" />
-      <v-icon name="co-github" scale="2" />
+      <a href="https://discordapp.com/users/Matheus-Ferraz#3474" target="_blank"><v-icon name="co-discord" scale="2" /></a>
+      <a href="https://github.com/FerrazRezende" target="_blank"><v-icon name="co-github" scale="2" /></a>
     </div>
     <div class="left-nav">
       <ul>
@@ -70,7 +58,7 @@ export default defineComponent({
         <li :class="{ 'active-menu': isActive('PlaygroundPage') }">Playground</li>
         <li :class="{ 'active-menu': isActive('BlogPage') }">Blog</li>
         <div>
-          <v-icon @click="toggleTheme" :name="iconTheme" class="theme-changer" :class="isDark ? 'light-bg' : 'dark-bg'" scale="2.1" />
+          <v-icon @click="themeStore.toggleTheme" :name="iconTheme" class="theme-changer" :class="themeStore.isDark ? 'light-bg' : 'dark-bg'" scale="2.1" />
         </div>
       </ul>
     </div>
@@ -90,7 +78,7 @@ header
   color: #FAFAFA!important
   font-family: var(--text-header), sans-serif
 
-div > svg
+div > a
   margin-right: 32px
 
 ul
@@ -119,12 +107,11 @@ ul > li
 
 .light-bg
   background-color: #FAFAFA!important
-  transition: 1s
 
 .dark-bg
   background-color: #110F1C!important
   color: #FAFAFA!important
-  transition: 1s
+
 
 
 </style>
