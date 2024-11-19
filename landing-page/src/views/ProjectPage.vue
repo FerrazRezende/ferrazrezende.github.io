@@ -28,7 +28,7 @@ export default defineComponent({
               repos.value.map((repo) => fetchCommits(repo.name))
           )
           loading.value = false
-        }, 1000)
+        }, 1500)
       } catch (error) {
         console.log("Erro ao buscar repositórios:", error);
       }
@@ -59,8 +59,21 @@ export default defineComponent({
   <main>
     <h1>Projetos</h1>
     <article>
-      <el-skeleton v-if="loading" :rows="3" animated />
+
+      <div v-if="loading" class="project-skeleton">
+
+        <el-skeleton animated>
+          <template #template>
+            <div class="skeleton-container">
+              <el-skeleton-item class="skeleton-img" variant="image" style="width: 150px; height: 150px" />
+              <el-skeleton :rows="3" />
+            </div>
+          </template>
+        </el-skeleton>
+      </div>
+
       <div v-else class="project-container" v-for="repo in repos" :key="repo.id">
+
         <section class="github-container" :style="{ backgroundImage: `url(${repo.logo_url})` }">
           <el-tooltip
               content="Abrir repositório do projeto"
@@ -71,11 +84,15 @@ export default defineComponent({
             </a>
           </el-tooltip>
         </section>
+
         <div class="linha-vertical"></div>
+
         <div class="info-container">
           <InfoProject :tituloProjeto="repo.name" :descricaoProjeto="repo.description" />
         </div>
+
         <div class="linha-vertical"></div>
+
         <div class="commits-container">
           <el-tooltip
             content="Commits"
@@ -86,14 +103,14 @@ export default defineComponent({
             />
           </el-tooltip>
         </div>
+
         <div class="linha-vertical"></div>
+
         <div class="documentacao-container">
           <DocumentacaoBotao :docUrl="`https://github.com/FerrazRezende/${repo.name}/blob/main/README.md`" />
         </div>
+
       </div>
-
-
-
     </article>
   </main>
 </template>
@@ -184,9 +201,28 @@ article
   background-color: var(--text-color)
 
 .el-skeleton
-  padding: 16px 128px
+  padding: 16px
   --el-skeleton-color: var(--background-color)
   --el-skeleton-to-color: var(--primary-color)
+
+.skeleton-img
+  border-radius: 8px
+  margin-right: 16px
+
+.project-skeleton
+  flex-wrap: wrap
+  padding: 16px
+  width: 85%
+  max-width: 1300px
+  border: solid 3px var(--primary-color)
+  border-radius: 8px
+  gap: 25px
+  margin: 16px 0
+
+.skeleton-container
+  display: flex
+  justify-content: space-between
+  align-items: center
 
 
 </style>

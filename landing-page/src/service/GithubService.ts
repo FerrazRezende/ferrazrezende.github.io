@@ -3,7 +3,7 @@ import axios, { AxiosInstance } from "axios";
 const githubService: AxiosInstance = axios.create({
     baseURL: 'https://api.github.com',
     headers: {
-        'Authorization': `Bearer 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`,
+        'Authorization': `Bearer ${process.env.VUE_APP_GITHUB_KEY}`,
         'Accept': 'application/vnd.github.v3+json',
     },
 });

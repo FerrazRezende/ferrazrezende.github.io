@@ -33,7 +33,13 @@ import {
     CoAmazonAws,
     CoPython,
     IoDocumentText,
-    PrAngleDown
+    PrAngleDown,
+    FaRocket,
+    SiRiotgames,
+    MdInfoOutlined,
+    BiTranslate,
+    BiList
+    
 
 } from "oh-vue-icons/icons"
 import { createPinia } from "pinia"
@@ -62,7 +68,12 @@ addIcons(
     CoAmazonAws,
     CoPython,
     IoDocumentText,
-    PrAngleDown
+    PrAngleDown,
+    FaRocket,
+    SiRiotgames,
+    MdInfoOutlined,
+    BiTranslate,
+    BiList
 
 )
 

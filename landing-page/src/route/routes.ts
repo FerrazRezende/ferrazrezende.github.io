@@ -1,6 +1,7 @@
 import { createRouter, createWebHistory, RouteRecordRaw } from 'vue-router';
 import ProjectPage from "@/views/ProjectPage.vue";
 import HomePage from "@/views/HomePage.vue";
+import PlaygroundPage from "@/views/PlaygroundPage.vue";
 
 
 const routes: Array<RouteRecordRaw> = [
@@ -13,6 +14,11 @@ const routes: Array<RouteRecordRaw> = [
         path: '/projetos',
         name: 'ProjectPage',
         component: ProjectPage,
+    },
+    {
+        path: '/playground',
+        name: "PlaygroundPage",
+        component: PlaygroundPage
     },
     // Adicione mais rotas conforme necessário
 ];

@@ -68,4 +68,31 @@ p
 .mg-t
   margin-bottom: 8px
 
+
+@media (max-width: 768px)
+  main
+    height: 156px
+
+  .info-container
+    padding: 0
+
+  .foto-container
+    min-width: 156px
+    height: 156px
+    margin-right: 16px
+    background-size: cover
+
+  h3
+    font-size: 16px
+
+
+  h1
+    font-size: 24px
+
+  p
+    font-size: 12px
+
+  .mg-t
+    margin-bottom: 4px
+
 </style>

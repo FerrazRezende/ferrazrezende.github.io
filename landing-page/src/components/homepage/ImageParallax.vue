@@ -42,4 +42,8 @@ export default defineComponent({
 
 .bg-img-light
   background-image: url('~@/assets/parallax/mountain.jpg')
+
+@media (max-width: 768px)
+  #parallax
+    min-height: 122px
 </style>

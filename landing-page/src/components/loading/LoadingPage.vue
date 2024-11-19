@@ -26,7 +26,7 @@ export default {
   height: 100vh
   width: 100vw
   z-index: 100
-  background-color: var(--background-color)
+  background-color: var(--background-color)!important
 
 
 </style>

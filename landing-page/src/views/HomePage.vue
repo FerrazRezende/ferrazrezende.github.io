@@ -39,4 +39,8 @@ export default defineComponent({
 .parallax-container
   margin: 74px 0
   padding: 0 50px
+
+@media (max-width: 768px)
+  .parallax-container
+    padding: 0 30px
 </style>

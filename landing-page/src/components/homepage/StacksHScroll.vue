@@ -143,4 +143,21 @@ p
   margin: 8px 0
   font-family: var(--text-title), sans-serif
   font-size: 18px
+
+@media (max-width: 768px)
+  .stack-item
+    width: 170px
+    height: 164px
+
+  p
+    font-size: 16px
+
+@media (max-width: 480px)
+  .stack-item
+    width: 142px
+    height: 142px
+
+  p
+    font-size: 12px
+
 </style>

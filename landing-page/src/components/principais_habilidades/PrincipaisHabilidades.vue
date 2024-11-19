@@ -79,5 +79,21 @@ section
 section > .cards
   margin: 0 32px
 
+@media (max-width: 768px)
+
+  h1
+    font-size: 32px
+
+
+
+@media (max-width: 1370px)
+  section
+
+    flex: 2 1 100px
+    flex-wrap: wrap
+
+
+  section > .cards
+    margin: 32px 32px
 
 </style>

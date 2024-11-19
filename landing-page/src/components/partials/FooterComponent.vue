@@ -70,4 +70,8 @@ main
 .mr-i
   margin-right: 16px
 
+@media (max-width: 768px)
+  main
+    height: 356px
+
 </style>
