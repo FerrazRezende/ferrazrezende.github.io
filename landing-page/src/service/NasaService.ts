@@ -1,11 +1,11 @@
 import axios, { AxiosInstance } from 'axios'
 
 const nasaService: AxiosInstance = axios.create({
-    baseURL: 'http://localhost:3001/api/',  // Para APOD
+    baseURL: 'backend/api',  // Para APOD
 })
 
 const epicService: AxiosInstance = axios.create({
-    baseURL: 'http://localhost:3001/api/epic',  // Para EPIC
+    baseURL: 'backend/api/epic',  // Para EPIC
 })
 
 export interface imgData {
